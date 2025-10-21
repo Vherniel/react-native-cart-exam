@@ -1,5 +1,3 @@
-import { Image } from 'expo-image';
-import { ParallaxScrollView } from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { FlatList, Pressable, View, Text } from 'react-native';
@@ -10,18 +8,9 @@ import { clsx } from 'clsx';
 export default function ProductsScreen() {
   return (
     <>
-      <ParallaxScrollView
-        headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-        headerImage={
-          <Image
-            className="absolute bottom-0 left-0 h-44 w-72"
-            source={require('@/assets/images/partial-react-logo.png')}
-          />
-        }>
-        <ThemedView className="mt-4 p-4">
-          <ThemedText className="text-4xl font-bold">React Native Add to Cart Exam</ThemedText>
-        </ThemedView>
-      </ParallaxScrollView>
+      <ThemedView className="p-4">
+        <ThemedText className="text-4xl font-bold">React Native Add to Cart Exam</ThemedText>
+      </ThemedView>
       <ThemedView className="gap-4 p-4">
         <ThemedText className="text-2xl font-bold">Filipino Breakfast Menu</ThemedText>
         <FlatList
@@ -52,7 +41,7 @@ function ItemCard({ item }: { item: Product }) {
           <ThemedText>{item.description}</ThemedText>
         </View>
         <View>
-          <ThemedText className='text-2xl font-bold'>₱{(item.price / 100).toFixed(2)}</ThemedText>
+          <ThemedText className="text-2xl font-bold">₱{(item.price / 100).toFixed(2)}</ThemedText>
         </View>
       </View>
       {!isInCart ? (
