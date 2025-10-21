@@ -1,5 +1,5 @@
 {
-  "name": "my-expo-app",
+  "name": "react-native-cart-exam",
   "version": "1.0.0",
   "scripts": {
     "android": "expo start --android",
