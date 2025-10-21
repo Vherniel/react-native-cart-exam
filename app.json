@@ -2,37 +2,43 @@
   "expo": {
     "name": "react-native-cart-exam",
     "slug": "react-native-cart-exam",
+    "scheme": "react-native-cart-exam",
     "version": "1.0.0",
-
+    "newArchEnabled": true,
     "web": {
       "favicon": "./assets/favicon.png"
     },
-
     "experiments": {
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "typedRoutes": true,
+      "reactCompiler": true
     },
-
-    "plugins": [],
-
+    "plugins": [
+      "expo-router"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.reactnativecartexam"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.reactnativecartexam"
     }
   }
 }
