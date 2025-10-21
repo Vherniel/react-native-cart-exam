@@ -3,6 +3,14 @@ import { create } from "zustand";
 
 export type CartProduct = Product & { qty: number };
 
+export type Voucher = {
+  code: string
+  type: 'fixed' | 'percent'
+  value: number
+  minSpend?: number
+  maxDiscount?: number
+}
+
 export type CartState = {
   products: CartProduct[];
   addProduct: (product: Product) => void
@@ -10,6 +18,9 @@ export type CartState = {
   increaseQty: (id: string) => void
   decreaseQty: (id: string) => void
   clear: () => void
+  voucher: Voucher | null
+  setVoucher: (v: Voucher | null) => void
+  clearVoucher: () => void
 };
 
 export const useCartStore = create<CartState>((set) => ({
@@ -47,4 +58,8 @@ export const useCartStore = create<CartState>((set) => ({
     })),
 
   clear: () => set({ products: [] }),
+
+  voucher: null,
+  setVoucher: v => set({ voucher: v }),
+  clearVoucher: () => set({ voucher: null }),
 }));
