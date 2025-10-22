@@ -8,19 +8,19 @@ import { clsx } from 'clsx';
 export default function ProductsScreen() {
   return (
     <>
-      <ThemedView className="p-4">
+      <ThemedView className="px-4 pt-24">
         <ThemedText className="text-4xl font-bold">React Native Add to Cart Exam</ThemedText>
       </ThemedView>
       <ThemedView className="gap-4 p-4">
         <ThemedText className="text-2xl font-bold">Filipino Breakfast Menu</ThemedText>
-        <FlatList
-          data={products}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <ItemCard item={item} />}
-          contentContainerStyle={{}}
-          ItemSeparatorComponent={() => <ThemedView className="h-4" />}
-        />
       </ThemedView>
+      <FlatList
+        data={products}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ItemCard item={item} />}
+        contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 128, backgroundColor: '#fff' }}
+        ItemSeparatorComponent={() => <ThemedView className="h-4" />}
+      />
     </>
   );
 }

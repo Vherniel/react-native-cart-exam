@@ -5,6 +5,9 @@ import { type Voucher, useCartStore } from '@/stores/cart-store';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
+import { styled } from 'nativewind';
+
+const StyledTextInput = styled(TextInput);
 
 export default function CartScreen() {
   const products = useCartStore((state) => state.products);
@@ -87,7 +90,7 @@ function CartItemCard({ item }: { item: Product }) {
         </View>
       </View>
       <View className="flex-row items-end justify-between">
-        <View style={{ flexDirection: 'row' }}>
+        <View className='flex-row'>
           <Pressable onPress={() => decreaseQty(item.id)}>
             <ThemedText className="flex size-9 items-center justify-center border border-zinc-200">
               −
@@ -137,11 +140,12 @@ function VoucherInput() {
   if (!getVoucher) {
     return (
       <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
-        <TextInput
+        <StyledTextInput
           value={code}
           onChangeText={setCode}
           placeholder="Enter voucher"
-          className="flex-1 rounded-sm border border-zinc-200 px-4 py-3"
+          style={{ width: 256, borderWidth: 1, borderColor: '#d1d5db', borderRadius: 4, padding: 8 }}
+          // className="flex-1 w-full rounded-sm border border-zinc-200 px-4 py-3"
         />
         <Pressable
           className="rounded-sm border border-zinc-900 bg-zinc-900 px-4 py-2"
