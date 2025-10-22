@@ -39,6 +39,12 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.anonymous.reactnativecartexam"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "99ea42f9-8bee-4c3a-ad9a-1ff69d45dbf7"
+      }
     }
   }
 }
