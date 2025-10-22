@@ -10,4 +10,4 @@ config.resolver.alias = {
   '@': path.resolve(__dirname),
 };
 
-module.exports = withNativewind(config, { input: "./global.css" });
+module.exports = withNativewind(config);
